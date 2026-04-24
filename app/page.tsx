@@ -254,20 +254,20 @@ const areas2 = [
    MÓDULOS DO ACADEMY
 ───────────────────────────────────────────── */
 const academyModules = [
-  { src: '/academy/master-sales-script.png',      title: 'Master Sales Script' },
-  { src: '/academy/script-quebra-objecoes.png',   title: 'Script de Quebra de Objeções' },
-  { src: '/academy/persuasao-pro.png',            title: 'Persuasão PRO' },
-  { src: '/academy/intensivo-fechamento.png',     title: 'Intensivo Fechamento em Reunião' },
-  { src: '/academy/prospeccao-7d.png',            title: 'Prospecção 7D' },
-  { src: '/academy/workshop-prospeccao-7d.png',   title: 'Workshop Prospecção 7D' },
-  { src: '/academy/analises-de-call.png',         title: 'Análises de Call — Yuri Barbosa' },
-  { src: '/academy/analise-de-negocios.png',      title: 'Análise de Negócios — Vinícius de Sá' },
-  { src: '/academy/kit-gestao-comercial.png',     title: 'Kit Gestão Comercial' },
-  { src: '/academy/lideranca-financeira.png',     title: 'Liderança Financeira' },
-  { src: '/academy/mapa-da-otimizacao.png',       title: 'Mapa da Otimização' },
-  { src: '/academy/vendedor-top-1.png',           title: 'Vendedor TOP 1' },
-  { src: '/academy/raio-x-da-personalidade.png',  title: 'Raio X da Personalidade' },
-  { src: '/academy/eleve-se.png',                 title: 'Eleve-se' },
+  { src: '/academy/vendedor-top-1.png',           title: 'Vendedor Top 1',                          desc: 'Mindset, método e execução para se tornar o top performer da sua área.' },
+  { src: '/academy/master-sales-script.png',      title: 'Master Sales Script',                     desc: 'Scripts completos prontos para prospecção, follow-up e fechamento.' },
+  { src: '/academy/persuasao-pro.png',            title: 'Persuasão Pro',                           desc: 'Técnicas avançadas de influência, rapport e negociação para fechar mais.' },
+  { src: '/academy/workshop-prospeccao-7d.png',   title: 'Workshop Prospecção 7D',                  desc: 'Um plano prático para gerar demanda e encher o funil em 7 dias.' },
+  { src: '/academy/intensivo-fechamento.png',     title: 'Intensivo Fechamento em Reunião',         desc: 'Como conduzir e fechar reuniões comerciais com consistência.' },
+  { src: '/academy/kit-gestao-comercial.png',     title: 'Kit de Gestão Comercial',                 desc: 'Ferramentas e indicadores para quem lidera ou quer liderar um time de vendas.' },
+  { src: '/academy/analises-de-call.png',         title: 'Análises de Call — Yuri Barbosa',         desc: 'Reviews reais de ligações comerciais com feedback ao vivo.' },
+  { src: '/academy/raio-x-da-personalidade.png',  title: 'Raio X da Personalidade',                 desc: 'Como adaptar sua abordagem ao perfil de cada cliente e vender mais.' },
+  { src: '/academy/lideranca-financeira.png',     title: 'Liderança Financeira',                    desc: 'Como construir inteligência financeira dentro da operação comercial.' },
+  { src: '/academy/mapa-da-otimizacao.png',       title: 'Mapa da Otimização',                      desc: 'Como identificar os gargalos que estão travando seu crescimento.' },
+  { src: '/academy/desafio-plano-sem-risco.png',  title: 'Desafio Plano Sem Risco 2026',            desc: 'Planejamento comercial prático com metas reais para o ano.' },
+  { src: '/academy/a-riqueza-da-necessidade.png', title: 'A Riqueza da Necessidade',                desc: 'Como descobrir a dor real do cliente e usá-la como alavanca de venda.' },
+  { src: '/academy/eleve-se.png',                 title: 'Eleve-se',                                desc: 'Desenvolvimento pessoal e profissional para vendedores de alto nível.' },
+  { src: '/academy/analise-de-negocios.png',      title: 'Análises de Negócios — Vinícius de Sá',   desc: 'Diagnósticos reais de operações comerciais comentados ao vivo.' },
 ]
 
 function ModulesSection() {
@@ -298,8 +298,9 @@ function ModulesSection() {
                 <div style={{ position: 'relative', width: '100%', aspectRatio: '4/5', background: '#0A0A0A' }}>
                   <Image src={m.src} alt={m.title} fill sizes="(max-width: 600px) 50vw, 220px" style={{ objectFit: 'cover' }} />
                 </div>
-                <div style={{ padding: '14px 16px' }}>
-                  <span style={{ fontSize: 14, fontWeight: 600, color: '#0A0A0A', lineHeight: 1.35 }}>{m.title}</span>
+                <div style={{ padding: '16px 18px', display: 'flex', flexDirection: 'column', gap: 6, flexGrow: 1 }}>
+                  <div style={{ fontSize: 14, fontWeight: 700, color: '#0A0A0A', lineHeight: 1.35 }}>{m.title}</div>
+                  <p style={{ fontSize: 13, color: '#525252', lineHeight: 1.55 }}>{m.desc}</p>
                 </div>
               </div>
             ))}
@@ -314,12 +315,12 @@ function ModulesSection() {
    FULL SALES FLIX
 ───────────────────────────────────────────── */
 const flixFeatures = [
-  { src: '/flix/playbook-estruturacao-3.png',    title: 'Playbook de Estruturação Comercial 3.0' },
-  { src: '/flix/guia-social-selling.png',        title: 'Guia Prático de Social Selling' },
-  { src: '/flix/estudo-de-caso.png',             title: 'Estudo de Caso' },
-  { src: '/flix/bonus-1-apresentacao-comercial.png', title: 'Bônus 1 — Apresentação Comercial' },
-  { src: '/flix/bonus-2-social-selling.png',     title: 'Bônus 2 — Workshop Social Selling (Thiago Germano)' },
-  { src: '/flix/bonus-3-alfredo-soares.png',     title: 'Bônus 3 — Talk Alfredo Soares (FSX 2026)' },
+  { src: '/flix/playbook-estruturacao-3.png',  title: 'Playbook Interno de Estruturação Comercial 3.0', desc: 'O guia definitivo para estruturar processos e times comerciais com alto desempenho.' },
+  { src: '/flix/script-quebra-objecoes.png',   title: 'Script Secreto para Quebra de Objeções',         desc: 'Como lidar com as principais objeções e virar o jogo na negociação.' },
+  { src: '/flix/guia-social-selling.png',      title: 'Guia Prático de Social Selling',                 desc: 'Como usar redes sociais para gerar oportunidades de venda de forma consistente.' },
+  { src: '/flix/estudo-de-caso.png',           title: 'Estudo de Caso: Gabriel Bueno',                  desc: 'Como um vendedor chegou a 5M de faturamento — análise real, passo a passo.' },
+  { src: '/flix/bonus-3-alfredo-soares.png',   title: 'Talk com Alfredo Soares',                        desc: 'Conteúdo exclusivo gravado no Full Sales Experience 2026.' },
+  { src: '/flix/bonus-2-social-selling.png',   title: 'Workshop de Social Selling — Thiago Germano',    desc: 'Estratégias práticas de vendas pelas redes sociais.' },
 ]
 
 function FlixSection() {
@@ -355,8 +356,9 @@ function FlixSection() {
                 <div style={{ position: 'relative', width: '100%', aspectRatio: '4/5', background: '#0A0A0A' }}>
                   <Image src={f.src} alt={f.title} fill sizes="(max-width: 600px) 50vw, 280px" style={{ objectFit: 'cover' }} />
                 </div>
-                <div style={{ padding: '16px 18px' }}>
+                <div style={{ padding: '18px 20px', display: 'flex', flexDirection: 'column', gap: 6, flexGrow: 1 }}>
                   <div style={{ fontSize: 15, fontWeight: 700, color: '#FFFFFF', lineHeight: 1.35 }}>{f.title}</div>
+                  <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', lineHeight: 1.55 }}>{f.desc}</p>
                 </div>
               </div>
             ))}
