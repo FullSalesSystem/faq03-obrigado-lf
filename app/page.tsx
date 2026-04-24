@@ -254,20 +254,20 @@ const areas2 = [
    MÓDULOS DO ACADEMY
 ───────────────────────────────────────────── */
 const academyModules = [
-  { icon: '🎯', title: 'Prospecção ativa' },
-  { icon: '🔍', title: 'Qualificação de leads' },
-  { icon: '📝', title: 'Roteiros e Scripts' },
-  { icon: '💬', title: 'Objeções e Negociação' },
-  { icon: '🤝', title: 'Fechamento de vendas' },
-  { icon: '📞', title: 'Follow-up estruturado' },
-  { icon: '📊', title: 'Gestão de Pipeline' },
-  { icon: '📈', title: 'Métricas e KPIs' },
-  { icon: '🧭', title: 'Liderança Comercial' },
-  { icon: '🧲', title: 'Recrutamento de Vendedores' },
-  { icon: '🚀', title: 'Onboarding e Ramp-up' },
-  { icon: '📚', title: 'Playbooks Operacionais' },
-  { icon: '🔮', title: 'Forecast e Previsibilidade' },
-  { icon: '♟️', title: 'Estratégia Comercial' },
+  { src: '/academy/master-sales-script.png',      title: 'Master Sales Script' },
+  { src: '/academy/script-quebra-objecoes.png',   title: 'Script de Quebra de Objeções' },
+  { src: '/academy/persuasao-pro.png',            title: 'Persuasão PRO' },
+  { src: '/academy/intensivo-fechamento.png',     title: 'Intensivo Fechamento em Reunião' },
+  { src: '/academy/prospeccao-7d.png',            title: 'Prospecção 7D' },
+  { src: '/academy/workshop-prospeccao-7d.png',   title: 'Workshop Prospecção 7D' },
+  { src: '/academy/analises-de-call.png',         title: 'Análises de Call — Yuri Barbosa' },
+  { src: '/academy/analise-de-negocios.png',      title: 'Análise de Negócios — Vinícius de Sá' },
+  { src: '/academy/kit-gestao-comercial.png',     title: 'Kit Gestão Comercial' },
+  { src: '/academy/lideranca-financeira.png',     title: 'Liderança Financeira' },
+  { src: '/academy/mapa-da-otimizacao.png',       title: 'Mapa da Otimização' },
+  { src: '/academy/vendedor-top-1.png',           title: 'Vendedor TOP 1' },
+  { src: '/academy/raio-x-da-personalidade.png',  title: 'Raio X da Personalidade' },
+  { src: '/academy/eleve-se.png',                 title: 'Eleve-se' },
 ]
 
 function ModulesSection() {
@@ -284,18 +284,23 @@ function ModulesSection() {
         </FadeUp>
 
         <FadeUp delay={80}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 16 }}>
             {academyModules.map((m, i) => (
               <div key={i} style={{
-                display: 'flex', alignItems: 'center', gap: 12,
                 background: '#FFFFFF',
                 border: '1px solid rgba(0,0,0,0.08)',
-                borderRadius: 12,
-                padding: '16px 18px',
+                borderRadius: 14,
+                overflow: 'hidden',
                 boxShadow: '0 1px 4px rgba(0,0,0,0.04)',
+                display: 'flex',
+                flexDirection: 'column',
               }}>
-                <span style={{ fontSize: 22, lineHeight: 1 }}>{m.icon}</span>
-                <span style={{ fontSize: 14, fontWeight: 600, color: '#0A0A0A', lineHeight: 1.35 }}>{m.title}</span>
+                <div style={{ position: 'relative', width: '100%', aspectRatio: '4/5', background: '#0A0A0A' }}>
+                  <Image src={m.src} alt={m.title} fill sizes="(max-width: 600px) 50vw, 220px" style={{ objectFit: 'cover' }} />
+                </div>
+                <div style={{ padding: '14px 16px' }}>
+                  <span style={{ fontSize: 14, fontWeight: 600, color: '#0A0A0A', lineHeight: 1.35 }}>{m.title}</span>
+                </div>
               </div>
             ))}
           </div>
@@ -309,10 +314,12 @@ function ModulesSection() {
    FULL SALES FLIX
 ───────────────────────────────────────────── */
 const flixFeatures = [
-  { icon: '📘', title: 'Playbooks prontos', desc: 'Modelos operacionais para aplicar direto na sua empresa.' },
-  { icon: '🎬', title: 'Análises de call reais', desc: 'Casos comentados por Yuri Barbosa com diagnósticos precisos.' },
-  { icon: '🗺️', title: 'Guias práticos', desc: 'Passo a passo detalhado para cada etapa do processo comercial.' },
-  { icon: '🎤', title: 'Workshops exclusivos', desc: 'Encontros com especialistas convidados e conteúdo novo toda semana.' },
+  { src: '/flix/playbook-estruturacao-3.png',    title: 'Playbook de Estruturação Comercial 3.0' },
+  { src: '/flix/guia-social-selling.png',        title: 'Guia Prático de Social Selling' },
+  { src: '/flix/estudo-de-caso.png',             title: 'Estudo de Caso' },
+  { src: '/flix/bonus-1-apresentacao-comercial.png', title: 'Bônus 1 — Apresentação Comercial' },
+  { src: '/flix/bonus-2-social-selling.png',     title: 'Bônus 2 — Workshop Social Selling (Thiago Germano)' },
+  { src: '/flix/bonus-3-alfredo-soares.png',     title: 'Bônus 3 — Talk Alfredo Soares (FSX 2026)' },
 ]
 
 function FlixSection() {
@@ -341,11 +348,16 @@ function FlixSection() {
                 background: 'rgba(255,255,255,0.04)',
                 border: '1px solid rgba(255,255,255,0.1)',
                 borderRadius: 14,
-                padding: '24px 22px',
+                overflow: 'hidden',
+                display: 'flex',
+                flexDirection: 'column',
               }}>
-                <div style={{ fontSize: 28, lineHeight: 1, marginBottom: 14 }}>{f.icon}</div>
-                <div style={{ fontSize: 16, fontWeight: 700, color: '#FFFFFF', marginBottom: 6 }}>{f.title}</div>
-                <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.6)', lineHeight: 1.55 }}>{f.desc}</p>
+                <div style={{ position: 'relative', width: '100%', aspectRatio: '4/5', background: '#0A0A0A' }}>
+                  <Image src={f.src} alt={f.title} fill sizes="(max-width: 600px) 50vw, 280px" style={{ objectFit: 'cover' }} />
+                </div>
+                <div style={{ padding: '16px 18px' }}>
+                  <div style={{ fontSize: 15, fontWeight: 700, color: '#FFFFFF', lineHeight: 1.35 }}>{f.title}</div>
+                </div>
               </div>
             ))}
           </div>
@@ -479,27 +491,24 @@ const pressItems = [
     outlet: 'Estadão',
     title: 'Full Sales System: três mentes empreendedoras que transformaram desafios em estratégias',
     quote: 'Nos últimos anos, ajudamos os nossos clientes a girar mais de 500 milhões de faturamento em vendas. Mas quando olhamos para esses números enxergamos algo ainda maior: não foi só o aumento nas vendas, mas eles se tornaram protagonistas da própria empresa.',
-    image: '/estadao.webp',
   },
   {
     outlet: 'Valor Econômico',
     title: 'Full Sales System aponta o caminho para crescer em 2026 com estratégias mais inteligentes',
     quote: 'Empresas que adotam estruturas de vendas inteligentes e estratégias orgânicas robustas tendem a prosperar em cenários de incerteza, criando vantagem competitiva mesmo com menor investimento direto em mídia.',
-    image: '/valor-economico.webp',
   },
   {
     outlet: 'Pequenas Empresas & Grandes Negócios',
     title: 'Yuri Barbosa, Vinícius de Sá e Matheus Garcia trilharam caminhos distintos, mas marcados pelo mesmo ponto de virada',
     quote: 'Os sócios desenvolveram uma metodologia própria, capaz de integrar processos comerciais eficientes, automação estratégica e construção de autoridade digital. O objetivo não era apenas aumentar vendas, mas criar um modelo de crescimento consistente.',
-    image: '/pequenas-empresas.webp',
   },
 ]
 
 const pressLogos = [
-  { name: 'Valor Econômico', src: '/press-valor-economico.png', bg: '#FFFFFF', scale: 1.2 },
-  { name: 'Pequenas Empresas & Grandes Negócios', src: '/press-pequenas-empresas.png', bg: '#D35400', scale: 2.3 },
+  { name: 'Valor Econômico', src: '/press-valor.png', bg: '#FFFFFF', scale: 1.2 },
+  { name: 'Pequenas Empresas & Grandes Negócios', src: '/press-pegn.png', bg: '#D35400', scale: 2.3 },
   { name: 'Band', src: '/press-band.png', bg: '#1A1A1A', scale: 1 },
-  { name: 'Estadão', src: '/estadao-novo.png', bg: '#FFFFFF', scale: 2.0 },
+  { name: 'Estadão', src: '/press-estadao.png', bg: '#FFFFFF', scale: 2.0 },
   { name: 'Terra', src: '/press-terra.png', bg: '#FFFFFF', scale: 1.0 },
 ]
 
@@ -543,16 +552,6 @@ function PressSection() {
           {pressItems.map((item, i) => (
             <FadeUp key={i} delay={i * 80}>
               <div className="card" style={{ overflow: 'hidden', height: '100%', display: 'flex', flexDirection: 'column' }}>
-                {/* Imagem no topo */}
-                <div style={{ width: '100%', aspectRatio: '16/7', position: 'relative', overflow: 'hidden', flexShrink: 0 }}>
-                  <Image
-                    src={item.image}
-                    alt={item.outlet}
-                    fill
-                    style={{ objectFit: 'cover', objectPosition: 'top' }}
-                  />
-                </div>
-                {/* Conteúdo */}
                 <div style={{ padding: '24px 26px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
                   <div style={{ fontSize: 28, color: '#E01515', fontWeight: 900, lineHeight: 1, marginBottom: 8, fontFamily: 'Georgia, serif' }}>"</div>
                   <p style={{ fontSize: 13, fontWeight: 700, color: '#0A0A0A', lineHeight: 1.4, marginBottom: 10 }}>
