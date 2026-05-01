@@ -24,7 +24,7 @@ export function Navbar() {
       transition: 'all 0.35s',
     }}>
       <div className="section-container" style={{ height: 64, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <img src="/logo-fss-branco.png" alt="Full Sales System" style={{ height: 36, width: 'auto', display: 'block', filter: scrolled ? 'brightness(0)' : 'none' }} />
+        <img src="/logo-fss-branco.webp" alt="Full Sales System" style={{ height: 36, width: 'auto', display: 'block', filter: scrolled ? 'brightness(0)' : 'none' }} />
         <a
           href={CHECKOUT_ANUAL_URL}
           className="btn-primary"

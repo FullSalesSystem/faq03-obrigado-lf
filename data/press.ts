@@ -20,9 +20,9 @@ export const pressItems: PressItem[] = [
 ]
 
 export const pressLogos: PressLogo[] = [
-  { name: 'Valor Econômico',                       src: '/press-valor.png',   bg: '#FFFFFF', scale: 1.2 },
-  { name: 'Pequenas Empresas & Grandes Negócios',  src: '/press-pegn.png',    bg: '#D35400', scale: 2.3 },
-  { name: 'Band',                                  src: '/press-band.png',    bg: '#1A1A1A', scale: 1.0 },
-  { name: 'Estadão',                               src: '/press-estadao.png', bg: '#FFFFFF', scale: 2.0 },
-  { name: 'Terra',                                 src: '/press-terra.png',   bg: '#FFFFFF', scale: 1.0 },
+  { name: 'Valor Econômico',                       src: '/press-valor.webp',   bg: '#FFFFFF', scale: 1.2 },
+  { name: 'Pequenas Empresas & Grandes Negócios',  src: '/press-pegn.webp',    bg: '#D35400', scale: 2.3 },
+  { name: 'Band',                                  src: '/press-band.webp',    bg: '#1A1A1A', scale: 1.0 },
+  { name: 'Estadão',                               src: '/press-estadao.webp', bg: '#FFFFFF', scale: 2.0 },
+  { name: 'Terra',                                 src: '/press-terra.webp',   bg: '#FFFFFF', scale: 1.0 },
 ]
