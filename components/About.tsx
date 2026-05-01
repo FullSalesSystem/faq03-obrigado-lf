@@ -15,7 +15,7 @@ export function About() {
               boxShadow: '0 4px 24px rgba(0,0,0,0.12)',
             }}>
               <Image
-                src="/socios.png"
+                src="/socios.webp"
                 alt="Sócios FSS"
                 fill
                 style={{ objectFit: 'cover', objectPosition: 'center top' }}
