@@ -22,22 +22,18 @@ export function Flix() {
         </FadeUp>
 
         <FadeUp delay={80}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(155px, 1fr))', gap: 16 }}>
             {flixFeatures.map((f, i) => (
               <div key={i} style={{
-                background: 'rgba(255,255,255,0.04)',
-                border: '1px solid rgba(255,255,255,0.1)',
-                borderRadius: 14,
-                overflow: 'hidden',
                 display: 'flex',
                 flexDirection: 'column',
               }}>
-                <div style={{ position: 'relative', width: '100%', aspectRatio: '2/3', background: '#0A0A0A' }}>
-                  <Image src={f.src} alt={f.title} fill sizes="(max-width: 600px) 50vw, 280px" style={{ objectFit: 'cover' }} />
+                <div style={{ position: 'relative', width: '100%', aspectRatio: '2/3', borderRadius: 12, overflow: 'hidden', background: '#0A0A0A' }}>
+                  <Image src={f.src} alt={f.title} fill sizes="(max-width: 600px) 50vw, 165px" style={{ objectFit: 'cover' }} />
                 </div>
-                <div style={{ padding: '18px 20px', display: 'flex', flexDirection: 'column', gap: 6, flexGrow: 1 }}>
-                  <div style={{ fontSize: 15, fontWeight: 700, color: '#FFFFFF', lineHeight: 1.35 }}>{f.title}</div>
-                  <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', lineHeight: 1.55 }}>{f.desc}</p>
+                <div style={{ padding: '12px 2px 0', display: 'flex', flexDirection: 'column', gap: 6 }}>
+                  <div style={{ fontSize: 14, fontWeight: 700, color: '#FFFFFF', lineHeight: 1.35 }}>{f.title}</div>
+                  <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.6)', lineHeight: 1.5 }}>{f.desc}</p>
                 </div>
               </div>
             ))}
