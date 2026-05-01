@@ -25,6 +25,10 @@ export const metadata: Metadata = {
       'Você deu o primeiro passo. Conheça a Full Sales System — a consultoria que já estruturou mais de 550 operações comerciais.',
     type: 'website',
   },
+  robots: {
+    index: false,
+    follow: true,
+  },
 }
 
 export default function RootLayout({
