@@ -295,7 +295,7 @@ function ModulesSection() {
                 display: 'flex',
                 flexDirection: 'column',
               }}>
-                <div style={{ position: 'relative', width: '100%', aspectRatio: '4/5', background: '#0A0A0A' }}>
+                <div style={{ position: 'relative', width: '100%', aspectRatio: '2/3', background: '#0A0A0A' }}>
                   <Image src={m.src} alt={m.title} fill sizes="(max-width: 600px) 50vw, 220px" style={{ objectFit: 'cover' }} />
                 </div>
                 <div style={{ padding: '16px 18px', display: 'flex', flexDirection: 'column', gap: 6, flexGrow: 1 }}>
@@ -353,7 +353,7 @@ function FlixSection() {
                 display: 'flex',
                 flexDirection: 'column',
               }}>
-                <div style={{ position: 'relative', width: '100%', aspectRatio: '4/5', background: '#0A0A0A' }}>
+                <div style={{ position: 'relative', width: '100%', aspectRatio: '2/3', background: '#0A0A0A' }}>
                   <Image src={f.src} alt={f.title} fill sizes="(max-width: 600px) 50vw, 280px" style={{ objectFit: 'cover' }} />
                 </div>
                 <div style={{ padding: '18px 20px', display: 'flex', flexDirection: 'column', gap: 6, flexGrow: 1 }}>
