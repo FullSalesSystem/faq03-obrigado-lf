@@ -51,8 +51,13 @@ export default function RootLayout({
           s.parentNode.insertBefore(t,s)}(window, document,'script',
           'https://connect.facebook.net/en_US/fbevents.js');
           fbq('init', '288404690470754');
-          fbq('trackCustom', 'Pageview-lead-desqualificado-geral');
-          fbq('trackCustom', 'Lead_desqualificado_FAQ_03');
+          /* eventID = ?sid= (submission_id do form do playbook): o playbook-api
+             manda os mesmos eventos pela Conversions API e a Meta deduplica. */
+          var sid = '';
+          try { sid = new URLSearchParams(location.search).get('sid') || ''; } catch (e) {}
+          function px(nome) { sid ? fbq('trackCustom', nome, {}, { eventID: sid }) : fbq('trackCustom', nome); }
+          px('Pageview-lead-desqualificado-geral');
+          px('Lead_desqualificado_FAQ_03');
         `}</Script>
         <noscript>
           <img height="1" width="1" style={{ display: 'none' }}
