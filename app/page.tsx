@@ -1,25 +1,13 @@
-import { About } from '@/components/About'
-import { AcademyHero } from '@/components/AcademyHero'
-import { Flix } from '@/components/Flix'
-import { Footer } from '@/components/Footer'
-import { Modules } from '@/components/Modules'
-import { Navbar } from '@/components/Navbar'
-import { Offer } from '@/components/Offer'
-import { Press } from '@/components/Press'
-import { Trust } from '@/components/Trust'
+// Página do desqualificado do FAQ-03 (Playbook): teste A/B da oferta (A = Full Sales Academy,
+// B = Master Sales Script). O desenho é um só (components/PaginaOferta.tsx); o conteúdo
+// de cada versão está em lib/ofertas.ts e o sorteio em lib/abOferta.ts.
+import { AbOfertaProvider } from '@/components/AbOferta'
+import { PaginaOferta } from '@/components/PaginaOferta'
 
 export default function Home() {
   return (
-    <main style={{ backgroundColor: '#F5F6F8', color: '#0A0A0A', overflowX: 'hidden' }}>
-      <Navbar />
-      <AcademyHero />
-      <Modules />
-      <Flix />
-      <Trust />
-      <Offer />
-      <About />
-      <Press />
-      <Footer />
-    </main>
+    <AbOfertaProvider origem="faq03">
+      <PaginaOferta />
+    </AbOfertaProvider>
   )
 }
