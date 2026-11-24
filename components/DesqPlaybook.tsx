@@ -13,6 +13,18 @@ import { PaginaOferta } from './PaginaOferta'
 
 const PLAYBOOK_PDF = '/oferta/playbook-estruturacao-comercial-3.0.pdf'
 const ANALISE_API = 'https://fullsalessystem.com/playbook/api/lead-analise'
+const PLAYBOOK_FORM = 'https://fullsalessystem.com/playbook/'
+
+/* "Corrigir minhas respostas": volta pro form do Playbook já aberto (?corrigir=1), com as UTMs. */
+function linkCorrigir() {
+  const de = new URLSearchParams(window.location.search)
+  const para = new URLSearchParams({ corrigir: '1' })
+  for (const k of ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid']) {
+    const v = de.get(k)
+    if (v) para.set(k, v)
+  }
+  return `${PLAYBOOK_FORM}?${para}`
+}
 
 const PARA_QUEM = [['b2b', 'B2B'], ['b2c', 'B2C'], ['b2g', 'B2G'], ['b2b2c', 'B2B2C']]
 const CANAIS = [['loja-fisica', 'Loja física'], ['ecommerce', 'E-commerce'], ['representantes', 'Representantes ou distribuidores'], ['vendedores-internos', 'Vendedores internos'], ['marketplace', 'Marketplace']]
@@ -92,6 +104,7 @@ function DesqPlaybook({ analise, sid }: { analise: boolean; sid: string }) {
       <div className="dp-wrap">
         <img src="/oferta/logo-branco.webp" alt="Full Sales" className="dp-logo" />
         <a className="dp-btn" href={PLAYBOOK_PDF} download="Playbook-de-Estruturacao-Comercial-3.0.pdf">Baixar o Playbook</a>
+        <a className="dp-corrigir" href={linkCorrigir()}>Preenchi algo errado? Corrigir minhas respostas</a>
         {analise && <FormAnalise sid={sid} />}
       </div>
     </main>
@@ -107,6 +120,8 @@ const CSS = `
 .dp-btn:hover{background:#c90030}
 .dp-btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
 .dp-btn:disabled{opacity:.6;cursor:wait}
+.dp-corrigir{align-self:center;margin-top:-14px;font-size:14px;color:rgba(255,255,255,.6);text-decoration:underline;text-underline-offset:3px}
+.dp-corrigir:hover{color:#fff}
 .dp-form{display:flex;flex-direction:column;gap:20px;border-top:1px solid rgba(255,255,255,.12);padding-top:28px}
 .dp-linha{font-size:18px;font-weight:700;line-height:1.4;margin:0}
 .dp-grupo{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
