@@ -90,7 +90,7 @@ function DesqPlaybook({ analise, sid }: { analise: boolean; sid: string }) {
     <main className="dp">
       <style>{CSS}</style>
       <div className="dp-wrap">
-        <img src="/oferta/logo-branco.webp" alt="Full Sales" width={160} height={50} className="dp-logo" />
+        <img src="/oferta/logo-branco.webp" alt="Full Sales" className="dp-logo" />
         <a className="dp-btn" href={PLAYBOOK_PDF} download="Playbook-de-Estruturacao-Comercial-3.0.pdf">Baixar o Playbook</a>
         {analise && <FormAnalise sid={sid} />}
       </div>
@@ -102,7 +102,7 @@ const CSS = `
 .dp{min-height:100vh;background:#0b0e1a;color:#fff;font-family:var(--font-inter),Inter,system-ui,sans-serif;padding:40px 16px 64px}
 .dp *{box-sizing:border-box}
 .dp-wrap{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
-.dp-logo{height:32px;width:auto}
+.dp .dp-logo{align-self:center;height:32px;width:auto;max-width:100%;object-fit:contain;display:block}
 .dp-btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:14px 24px;border-radius:999px;border:0;background:#FE063B;color:#fff;font:inherit;font-size:16px;font-weight:800;text-decoration:none;cursor:pointer;width:100%}
 .dp-btn:hover{background:#c90030}
 .dp-btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
@@ -110,10 +110,10 @@ const CSS = `
 .dp-form{display:flex;flex-direction:column;gap:20px;border-top:1px solid rgba(255,255,255,.12);padding-top:28px}
 .dp-linha{font-size:18px;font-weight:700;line-height:1.4;margin:0}
 .dp-grupo{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
-.dp-grupo legend,.dp-legenda{font-size:15px;font-weight:700;margin-bottom:10px;padding:0}
+.dp-grupo legend,.dp-legenda{color:#fff;font-size:15px;font-weight:700;margin-bottom:10px;padding:0}
 .dp-grupo textarea{width:100%;font:inherit;font-size:16px;color:#0d1626;background:#fff;border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:12px;resize:vertical}
 .dp-opcoes{display:flex;flex-wrap:wrap;gap:8px}
-.dp-op{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:10px 14px;border:1px solid rgba(255,255,255,.2);border-radius:999px;font-size:15px;cursor:pointer}
+.dp-op{color:#fff;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:10px 14px;border:1px solid rgba(255,255,255,.2);border-radius:999px;font-size:15px;cursor:pointer}
 .dp-op input{accent-color:#FE063B;width:18px;height:18px}
 .dp-erro{color:#fecaca;font-size:14px;margin:0}
 .dp-recebido{font-size:17px;line-height:1.5;margin:0;border-top:1px solid rgba(255,255,255,.12);padding-top:28px}
