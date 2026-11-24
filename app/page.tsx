@@ -1,13 +1,10 @@
-// Página do desqualificado do FAQ-03 (Playbook): teste A/B da oferta (A = Full Sales Academy,
-// B = Master Sales Script). O desenho é um só (components/PaginaOferta.tsx); o conteúdo
-// de cada versão está em lib/ofertas.ts e o sorteio em lib/abOferta.ts.
-import { AbOfertaProvider } from '@/components/AbOferta'
-import { PaginaOferta } from '@/components/PaginaOferta'
+// Página do desqualificado do FAQ-03 (Playbook).
+// Com ?motivo= (form novo, contrato 24/11/2026): só o link do Playbook e, no
+// nicho-analise, o formulário extra (components/DesqPlaybook.tsx).
+// Sem ?motivo=: teste A/B da oferta de hoje (A = Full Sales Academy, B = Master
+// Sales Script); desenho em components/PaginaOferta.tsx, conteúdo em lib/ofertas.ts.
+import { Destino } from '@/components/DesqPlaybook'
 
 export default function Home() {
-  return (
-    <AbOfertaProvider origem="faq03">
-      <PaginaOferta />
-    </AbOfertaProvider>
-  )
+  return <Destino />
 }
