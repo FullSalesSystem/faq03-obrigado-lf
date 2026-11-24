@@ -1,7 +1,9 @@
 'use client'
 // Desqualificado do Playbook com ?motivo= (contrato dos funis, 24/11/2026, "Exceção do Playbook").
-// Qualquer motivo: só o link para baixar o Playbook, sem texto de motivo e sem oferta.
-// motivo=nicho-analise: o link e, abaixo, a linha curta + o formulário extra, que posta
+// cargo, faturamento e nicho: o link para baixar o Playbook + "Corrigir minhas respostas" e,
+// abaixo, a oferta do teste A/B (desq-academy-x-mss-202611, origem faq03) como antes de
+// 24/11 17:12Z (decisão do Matheus, 24/11/2026). O sorteio só grava com ?sid= (o form manda).
+// motivo=nicho-analise: o link e, abaixo, a linha curta + o formulário extra (SEM oferta), que posta
 // no playbook-api (/playbook/api/lead-analise). O servidor relê cargo/faturamento/nicho
 // do que ele mesmo guardou pelo ?sid=; daqui só sobem as 4 respostas.
 // Sem ?motivo= (link antigo, acesso direto) a página segue com a oferta A/B de hoje.
@@ -38,7 +40,13 @@ export function Destino() {
   }, [])
   if (!q) return <div style={{ minHeight: '100vh', background: '#060A1E' }} aria-busy="true" />
   if (!q.motivo) return <AbOfertaProvider origem="faq03"><PaginaOferta /></AbOfertaProvider>
-  return <DesqPlaybook analise={q.motivo === 'nicho-analise' && Boolean(q.sid)} sid={q.sid} />
+  if (q.motivo === 'nicho-analise') return <DesqPlaybook analise={Boolean(q.sid)} sid={q.sid} />
+  return (
+    <>
+      <DesqPlaybook analise={false} sid={q.sid} comOferta />
+      <AbOfertaProvider origem="faq03"><PaginaOferta /></AbOfertaProvider>
+    </>
+  )
 }
 
 function Grupo({ legenda, children }: { legenda: string; children: ReactNode }) {
@@ -97,9 +105,9 @@ function FormAnalise({ sid }: { sid: string }) {
   )
 }
 
-function DesqPlaybook({ analise, sid }: { analise: boolean; sid: string }) {
+function DesqPlaybook({ analise, sid, comOferta = false }: { analise: boolean; sid: string; comOferta?: boolean }) {
   return (
-    <main className="dp">
+    <main className={comOferta ? 'dp dp-topo' : 'dp'}>
       <style>{CSS}</style>
       <div className="dp-wrap">
         <img src="/oferta/logo-branco.webp" alt="Full Sales" className="dp-logo" />
@@ -113,6 +121,7 @@ function DesqPlaybook({ analise, sid }: { analise: boolean; sid: string }) {
 
 const CSS = `
 .dp{min-height:100vh;background:#0b0e1a;color:#fff;font-family:var(--font-inter),Inter,system-ui,sans-serif;padding:40px 16px 64px}
+.dp-topo{min-height:0;padding-bottom:32px}
 .dp *{box-sizing:border-box}
 .dp-wrap{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
 .dp .dp-logo{align-self:center;height:32px;width:auto;max-width:100%;object-fit:contain;display:block}
