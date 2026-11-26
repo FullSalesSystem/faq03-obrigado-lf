@@ -110,7 +110,7 @@ function DesqPlaybook({ analise, sid, comOferta = false }: { analise: boolean; s
     <main className={comOferta ? 'dp dp-topo' : 'dp'}>
       <style>{CSS}</style>
       <div className="dp-wrap">
-        <img src="/oferta/logo-branco.webp" alt="Full Sales" className="dp-logo" />
+        <img src="/oferta/logo-branco.webp" alt="Full Sales" width={145} height={45} className="dp-logo" />
         <a className="dp-btn" href={PLAYBOOK_PDF} download="Playbook-de-Estruturacao-Comercial-3.0.pdf">Baixar o Playbook</a>
         <a className="dp-corrigir" href={linkCorrigir()}>Preenchi algo errado? Corrigir minhas respostas</a>
         {analise && <FormAnalise sid={sid} />}
@@ -124,7 +124,10 @@ const CSS = `
 .dp-topo{min-height:0;padding-bottom:32px}
 .dp *{box-sizing:border-box}
 .dp-wrap{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
-.dp .dp-logo{align-self:center;height:32px;width:auto;max-width:100%;object-fit:contain;display:block}
+/* a oferta logo abaixo tem o próprio logo no menu fixo: aqui ele já apareceu, não repete */
+.dp-topo + .po .po-logo{display:none}
+.dp-topo + .po .po-nav-in{justify-content:flex-end}
+.dp .dp-logo{align-self:center;height:45px;width:auto;max-width:100%;object-fit:contain;display:block}
 .dp-btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:14px 24px;border-radius:999px;border:0;background:#FE063B;color:#fff;font:inherit;font-size:16px;font-weight:800;text-decoration:none;cursor:pointer;width:100%}
 .dp-btn:hover{background:#c90030}
 .dp-btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
